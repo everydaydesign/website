@@ -2,12 +2,13 @@
 
 En utvecklingsmiljö för HTML och CSS.
 
-Det finns två sätt att arbeta:
+Det finns olika sätt att arbeta och publicera:
 
-1. Utveckla i molnet med **GitHub Codespaces**.
-2. Publicera din webbplats med högskolans tjänst **Webshare**.
+1. **Utveckla** i molnet med **GitHub Codespaces**.
+2. **Publicera** gratis direkt från GitHub med **GitHub Pages**.
+3. **Publicera** med högskolans tjänst **Webshare**.
 
-Du kan använda det ena, det andra eller båda.
+Du kan använda ett av dem eller kombinera flera.
 
 ---
 
@@ -97,7 +98,33 @@ Din kod försvinner inte – nästa gång fortsätter du där du slutade!
 
 ---
 
-## 2. Webshare – publicera din webbplats
+## 2. GitHub Pages – publicera gratis via GitHub
+
+GitHub Pages publicerar din statiska webbplats (HTML/CSS) direkt från ditt repo — helt gratis och utan FTP eller byggsteg.
+
+**Förutsättningar:** Du behöver ett **eget repo** (skapa ett via den gröna knappen **"Use this template"**, se steg 1 under Codespaces) och repot måste vara **publikt** (privata repo kräver GitHub Pro, vilket ingår i Student Developer Pack).
+
+1. Se till att din kod (`index.html` m.fl.) är **committad och pushad** till grenen `main`.
+2. Gå till ditt repo på **github.com** → klicka på fliken **Settings** högst upp.
+3. I vänstermenyn, under "Code and automation", välj **Pages**.
+4. Under **Build and deployment** → **Source**, välj **Deploy from a branch**.
+5. Under **Branch**, välj **`main`** och mappen **`/ (root)`** → klicka **Save**.
+6. Vänta ca **1 minut** och ladda om sidan. En ruta högst upp visar adressen till din publicerade webbplats:
+
+   **`https://<användarnamn>.github.io/<repo-namn>/`**
+7. Klicka på **Visit site** för att öppna din webbplats.
+
+**Bra att veta:**
+
+| Fråga | Svar |
+|-------|------|
+| **Uppdatera sidan** | Varje gång du pushar nya ändringar till `main` byggs webbplatsen om automatiskt inom någon minut. |
+| **Får en 404?** | Kontrollera att filen heter exakt **`index.html`** och ligger i **roten** av repot (inte i en undermapp). |
+| **Bilder syns inte?** | Använd relativa sökvägar, t.ex. `assets/images/min-bild.jpg` — inte sökvägar som börjar med `/`. |
+
+---
+
+## 3. Webshare – publicera din webbplats
 
 Webshare är högskolans tjänst för att publicera din egen webbplats på en publik adress.
 
