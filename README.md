@@ -100,11 +100,11 @@ Din kod försvinner inte – nästa gång fortsätter du där du slutade!
 
 ## 2. GitHub Pages – publicera gratis via GitHub
 
-GitHub Pages publicerar din statiska webbplats (HTML/CSS) direkt från ditt repo — helt gratis och utan FTP eller byggsteg.
+GitHub Pages publicerar din statiska webbplats (HTML/CSS) direkt från ditt repo helt gratis och utan FTP.
 
 **Förutsättningar:** Du behöver ett **eget repo** (skapa ett via den gröna knappen **"Use this template"**, se steg 1 under Codespaces) och repot måste vara **publikt** (privata repo kräver GitHub Pro, vilket ingår i Student Developer Pack).
 
-1. Se till att din kod (`index.html` m.fl.) är **committad och pushad** till grenen `main`.
+1. Se till att din kod (`index.html` m.fl.) är **committad och pushad** till `main`.
 2. Gå till ditt repo på **github.com** → klicka på fliken **Settings** högst upp.
 3. I vänstermenyn, under "Code and automation", välj **Pages**.
 4. Under **Build and deployment** → **Source**, välj **Deploy from a branch**.
