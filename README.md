@@ -8,8 +8,6 @@ Det finns olika sätt att arbeta och publicera:
 2. **Publicera** gratis direkt från GitHub med **GitHub Pages**.
 3. **Publicera** med högskolans tjänst **Webshare**.
 
-Du kan använda ett av dem eller kombinera flera.
-
 ---
 
 ## Innan du börjar: GitHub Student Developer Pack
