@@ -141,6 +141,34 @@
 
       .foot { padding: 24px 40px; text-align: center; font-size: 12px; color: var(--mute); }
       .foot a { color: var(--brand); text-decoration: none; }
+
+      /* Fixed "På denna sida" TOC in the right gutter; shown only when the
+         viewport is wide enough to clear the 1080px content track. */
+      .toc { display: none; }
+      @media (min-width: 1400px) {
+        .toc {
+          display: block;
+          position: fixed;
+          top: 96px;
+          left: calc(50% + 540px + 6px);
+          width: 150px;
+          max-height: calc(100vh - 132px);
+          overflow-y: auto;
+        }
+      }
+      .toc-title { font-size: 12px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+      .toc-links { display: flex; flex-direction: column; border-left: 1px solid var(--hairline); }
+      .toc-links a {
+        padding: 5px 0 5px 14px;
+        margin-left: -1px;
+        border-left: 2px solid transparent;
+        font-size: 12.5px;
+        line-height: 1.4;
+        color: var(--mute);
+        text-decoration: none;
+      }
+      .toc-links a:hover { color: var(--ink); }
+      .toc-links a.toc-active { color: var(--brand); border-left-color: var(--brand); font-weight: 500; }
     </style>
   </head>
   <body>
@@ -350,6 +378,18 @@ c) Beskrivning som indikerar distansutbildning</li>
 </ol>
       </article>
     </main>
+    <aside class="toc" aria-label="På denna sida">
+      <div class="toc-title">På denna sida</div>
+      <nav class="toc-links">
+        <a href="#innan-du-börjar-github-student-developer-pack">Innan du börjar: GitHub Student Developer Pack</a>
+        <a href="#om-du-får-beskedet-denied">Om du får beskedet Denied</a>
+        <a href="#hantera-dina-codespaces-timmar">Hantera dina Codespaces-timmar</a>
+        <a href="#1-codespaces--utveckla-i-molnet">1. Codespaces – utveckla i molnet</a>
+        <a href="#filstruktur">Filstruktur</a>
+        <a href="#2-github-pages--publicera-gratis-via-github">2. GitHub Pages – publicera gratis via GitHub</a>
+        <a href="#3-webshare--publicera-din-webbplats">3. Webshare – publicera din webbplats</a>
+      </nav>
+    </aside>
 
     <footer class="foot">
       © 2026 Montathar Faraon · Licensed under the
@@ -366,6 +406,53 @@ c) Beskrivning som indikerar distansutbildning</li>
           root.dataset.theme = next;
           try { localStorage.setItem("theme", next); } catch (e) {}
         });
+      })();
+
+      // Position-based scroll-spy for the "På denna sida" TOC (matches site.js
+      // on the git-guide pages): the last section still activates at the bottom.
+      (function () {
+        var links = document.querySelectorAll(".toc-links a");
+        if (!links.length) return;
+        var sections = [];
+        links.forEach(function (a) {
+          var el = document.getElementById(a.getAttribute("href").slice(1));
+          if (el) sections.push({ link: a, el: el });
+        });
+        if (!sections.length) return;
+        var current = null;
+        function setActive(link) {
+          if (current === link) return;
+          if (current) current.classList.remove("toc-active");
+          current = link;
+          if (current) current.classList.add("toc-active");
+        }
+        function onScroll() {
+          var doc = document.documentElement;
+          var atBottom = window.innerHeight + window.scrollY >= doc.scrollHeight - 2;
+          var pick = sections[0];
+          if (atBottom) {
+            pick = sections[sections.length - 1];
+          } else {
+            for (var i = 0; i < sections.length; i++) {
+              if (sections[i].el.getBoundingClientRect().top <= 120) pick = sections[i];
+            }
+          }
+          setActive(pick.link);
+        }
+        var ticking = false;
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(function () {
+              onScroll();
+              ticking = false;
+            });
+          },
+          { passive: true },
+        );
+        onScroll();
       })();
     </script>
   </body>
