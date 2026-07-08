@@ -452,6 +452,22 @@ c) Beskrivning som indikerar distansutbildning</li>
           { passive: true },
         );
         onScroll();
+
+        // The first link jumps to the very top and the last to the very bottom
+        // (their headings sit below the intro / above the footer), so the ends
+        // reach the page edges — matching the git-guide TOC.
+        var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var behavior = reduce ? "auto" : "smooth";
+        sections[0].link.addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: behavior });
+        });
+        if (sections.length > 1) {
+          sections[sections.length - 1].link.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: document.documentElement.scrollHeight, behavior: behavior });
+          });
+        }
       })();
     </script>
   </body>
