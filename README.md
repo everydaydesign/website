@@ -14,7 +14,7 @@ Det finns olika sätt att arbeta och publicera:
 
 För att använda Codespaces gratis behöver du registrera dig för GitHub Student Developer Pack med din högskolemail.
 
-1. Gå till **[GitHub Student Developer Pack](https://education.github.com/pack)**
+1. Gå till [GitHub Student Developer Pack](https://education.github.com/pack)
 2. Klicka på **"Sign up for Student Developer Pack"**
 3. Skapa ett **GitHub konto**
 4. Verifiera med din **@stud.hkr.se**-adress
