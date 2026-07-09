@@ -140,3 +140,5 @@ Webshare är högskolans tjänst för att publicera din egen webbplats på en pu
 3. I din startmapp (samma namn som ditt inloggningsnamn) finns en färdig startsida `default.asp`.
 4. För en egen HTML-sida — ersätt den med en fil som heter **`index.html`**.
 5. Din webbplats blir då tillgänglig på: **`https://www.webshare.hkr.se/inloggningsnamn`**
+
+<!-- everydaydesign · webdesign course -->
