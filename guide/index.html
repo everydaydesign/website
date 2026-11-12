@@ -138,6 +138,15 @@
       .markdown th, .markdown td { padding: 8px 13px; border: 1px solid var(--hairline); text-align: left; vertical-align: top; }
       .markdown th { background: var(--soft); font-weight: 600; color: var(--ink); }
       .markdown hr { margin: 34px 0; border: 0; border-top: 1px solid var(--hairline); }
+      .markdown .video {
+        margin: 0 0 18px;
+        aspect-ratio: 16 / 9;
+        border: 1px solid var(--hairline);
+        border-radius: 8px;
+        overflow: hidden;
+        background: #000;
+      }
+      .markdown .video iframe { display: block; width: 100%; height: 100%; border: 0; }
 
       .foot { padding: 24px 40px; text-align: center; font-size: 12px; color: var(--mute); }
       .foot a { color: var(--brand); text-decoration: none; }
@@ -296,6 +305,9 @@ c) Beskrivning som indikerar distansutbildning</li>
 <hr>
 <h2 id="2-github-pages--publicera-gratis-via-github">2. GitHub Pages – publicera gratis via GitHub</h2>
 <p>GitHub Pages publicerar din statiska webbplats (HTML/CSS) direkt från ditt repo helt gratis och utan FTP.</p>
+<div class="video">
+  <iframe src="https://www.youtube-nocookie.com/embed/ndtOchsY1co" title="Publish to GitHub Pages" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 <p><strong>Förutsättningar:</strong> Du behöver ett <strong>eget repo</strong> (skapa ett via den gröna knappen <strong>&quot;Use this template&quot;</strong>, se steg 1 under Codespaces) och repot måste vara <strong>publikt</strong> (privata repo kräver GitHub Pro, vilket ingår i Student Developer Pack).</p>
 <ol>
 <li><p>Se till att din kod (<code>index.html</code> m.fl.) är <strong>committad och pushad</strong> till <code>main</code>.</p>
